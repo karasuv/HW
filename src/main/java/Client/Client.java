@@ -8,7 +8,7 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 
-
+//шаблон клиента для сетевого хранилища
 public class Client {
 
     public static void main(String[] args) throws InterruptedException {
