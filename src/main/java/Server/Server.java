@@ -27,14 +27,12 @@ public class Server {
                     .childHandler(new ChannelInitializer<NioSocketChannel>() {
                         @Override
                         protected void initChannel(NioSocketChannel ch) throws Exception {
-                            ch.pipeline().addLast(new StringDecoder(),new StringEncoder(),new ServerDecoder());
+
                         }
                     })
                     .childOption(ChannelOption.SO_KEEPALIVE,true);
 
-            ChannelFuture sync = server.bind(9000).sync();
 
-            sync.channel().closeFuture().sync();
 
 
         } finally {

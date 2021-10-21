@@ -26,17 +26,10 @@ public class Client {
 
                         @Override
                         protected void initChannel(NioSocketChannel ch) throws Exception {
-                            ch.pipeline().addLast(new StringDecoder(),new StringEncoder(),new ClientDecoder());
 
                         }
                     });
-            ChannelFuture future = client.connect("localhost",9000).sync();
 
-            System.out.println("client started");
-            while (true) {
-                future.channel().writeAndFlush("hello from client").sync();
-
-                Thread.sleep(5000);
             }
 
         } finally {
